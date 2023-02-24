@@ -18,7 +18,7 @@ wing_method = 'foam'
 
 wing_span = 1
 wing_dihedral_angle_deg = 11
-vtail_dihedral_angle_deg= 37
+vtail_dihedral_angle_deg = 37
 
 airfoils = {
     name: asb.Airfoil(
@@ -366,7 +366,8 @@ opti.subject_to([
 opti.subject_to([
     x_nose < -0.25 * wing_root_chord - 0.5 * u.inch,  # propeller must extend in front of wing
     x_tail - x_nose < 0.826,  # due to the length of carbon tube I have
-    vtail.area() * np.cosd(vtail_dihedral_angle_deg) ** 2 * x_tail / (wing.area() * wing.mean_aerodynamic_chord()) > 0.25
+    vtail.area() * np.cosd(vtail_dihedral_angle_deg) ** 2 * x_tail / (
+                wing.area() * wing.mean_aerodynamic_chord()) > 0.25
 ])
 
 if __name__ == '__main__':
