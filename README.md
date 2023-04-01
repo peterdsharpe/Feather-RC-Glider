@@ -10,6 +10,8 @@ It's optimized to achieve the lowest possible sink-rate in still-air cruise flig
 
 ![three-view](./CAD/feather.png)
 
+([PDF](./CAD/feather.pdf))
+
 ![mass-budget](./figures/mass_budget.png)
 
 ## Conceptual Design Considerations
