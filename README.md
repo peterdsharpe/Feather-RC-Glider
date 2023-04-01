@@ -8,11 +8,11 @@ by Peter Sharpe
 
 It's optimized to achieve the lowest possible sink-rate in still-air cruise flight, in order to maximize flight duration during calm early mornings and its ability to exploit low-altitude thermals for lift.
 
-![three-view](./figures/three_view.png)
+![three-view](./CAD/feather.png)
 
 ![mass-budget](./figures/mass_budget.png)
 
-## Design Considerations
+## Conceptual Design Considerations
 
 Remote-controlled gliders in this size range typically fall into one of two categories:
 
@@ -58,3 +58,5 @@ For 15.3 grams, you get:
 which is pretty nuts. Given that the battery + receiver + 2 servos of a typical 1-meter DLG would weigh ~20 grams, we're essentially getting an entire powertrain for free, plus an additional 5 grams weight savings.
 
 The lack of a launch means we can build the main structural elements (wing and tailboom) much, much lighter, leading to **Feather's overall all-up weight of around 60 grams**. This compares to typical 1-meter-wingspan DLGs, the lightest of which weigh around 100 grams (assuming highest-end modern molded composite construction, etc.).
+
+## Detailed Design Considerations
