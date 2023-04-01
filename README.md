@@ -60,3 +60,36 @@ which is pretty nuts. Given that the battery + receiver + 2 servos of a typical 
 The lack of a launch means we can build the main structural elements (wing and tailboom) much, much lighter, leading to **Feather's overall all-up weight of around 60 grams**. This compares to typical 1-meter-wingspan DLGs, the lightest of which weigh around 100 grams (assuming highest-end modern molded composite construction, etc.).
 
 ## Detailed Design Considerations
+
+Section to be written...
+
+## Build Progress
+
+All components manufactured, except for the wing itself. 
+
+### Wing
+
+The manufacturing process for wings cast out of foam is a bit of a black art, so a lot of experimentation is needed to get it right:
+
+#### Attempt 1
+
+Under-expanded, although foam is rigid, the wing is very light, and the surface finish is promising. Casting into a set of PETG 3d-printed molds, which are sanded to a 1000-grit finish (surprisingly, this only takes a few minutes with the right power tools!) and wax-coated.
+
+Release was tough.
+
+![wing-1](./build_photos/expanding-foam-attempt-1.jpg)
+
+#### Attempt 2
+
+In addition to wax, I also added PVA as a release agent for this attempt. That worked great.
+
+Added more foam to prevent under-expansion, but I erred a bit on the opposite side. The force of the expanding foam was
+so much that it forced the two halves of the mold apart (which was only held together by ~40 lbs of weights), resulting in the wrong outer mold line.
+
+Surface finish is acceptable (would need some sanding). As a consequence of too much foam, the wing is a bit heavy (~35 grams). Quite stiff, though.
+
+#### Attempt 3
+
+To be done, but changes will include:
+- Splitting the difference between the two foam amounts, to hopefully neither under- nor over-expand.
+- Clamping the mold using C-clamps rather than weights, to prevent the mold from opening up in the event of over-expansion (there is a release hole in the mold).
