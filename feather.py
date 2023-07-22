@@ -396,18 +396,26 @@ if __name__ == '__main__':
     xsecs_to_keep[-1] = True
     wing_lowres.xsecs = np.array(wing_lowres.xsecs)[xsecs_to_keep]
 
-    avl_aero = asb.AVL(
-        airplane=asb.Airplane(
-            wings=[
-                wing_lowres,
-                vtail,
-            ],
-            fuselages=[fuselage]
-        ),
-        op_point=op_point,
-        xyz_ref=mass_props_TOGW.xyz_cg,
-        working_directory=r"C:\Users\peter\Downloads\avl_debug"
-    ).run()
+    try:
+        avl_aero = asb.AVL(
+            airplane=asb.Airplane(
+                wings=[
+                    wing_lowres,
+                    vtail,
+                ],
+                fuselages=[fuselage]
+            ),
+            op_point=op_point,
+            xyz_ref=mass_props_TOGW.xyz_cg,
+            working_directory=r"C:\Users\peter\Downloads\avl_debug"
+        ).run()
+    except FileNotFoundError:
+        class EmptyDict:
+            def __getitem__(self, item):
+                return "Install AVL to see this."
+
+
+        avl_aero = EmptyDict()
 
     import matplotlib.pyplot as plt
     import aerosandbox.tools.pretty_plots as p
