@@ -433,7 +433,7 @@ if __name__ == '__main__':
         "Cma"                   : fmt(aero['Cma']),
         "Cnb"                   : fmt(aero['Cnb']),
         "Cm"                    : fmt(aero['Cm']),
-        "Wing Reynolds Number"  : eng_string(op_point.reynolds(wing.mean_aerodynamic_chord())),
+        "Wing Reynolds Number"  : eng_string(op_point.reynolds(sol(wing.mean_aerodynamic_chord()))),
         "AVL: Cma"              : avl_aero['Cma'],
         "AVL: Cnb"              : avl_aero['Cnb'],
         "AVL: Cm"               : avl_aero['Cm'],
