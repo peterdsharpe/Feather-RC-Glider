@@ -367,7 +367,7 @@ opti.subject_to([
     x_nose < -0.25 * wing_root_chord - 0.5 * u.inch,  # propeller must extend in front of wing
     x_tail - x_nose < 0.826,  # due to the length of carbon tube I have
     vtail.area() * np.cosd(vtail_dihedral_angle_deg) ** 2 * x_tail / (
-                wing.area() * wing.mean_aerodynamic_chord()) > 0.25
+            wing.area() * wing.mean_aerodynamic_chord()) > 0.25
 ])
 
 if __name__ == '__main__':
@@ -377,18 +377,11 @@ if __name__ == '__main__':
         sol = opti.debug
     s = lambda x: sol.value(x)
 
-    airplane.substitute_solution(sol)
-    op_point.substitute_solution(sol)
-    # dyn.substitute_solution(sol)
-    mass_props_TOGW.substitute_solution(sol)
-
-    for v in mass_props.values():
-        v.substitute_solution(sol)
-
-    aero = {
-        k: s(v)
-        for k, v in aero.items() if not isinstance(v, list)
-    }
+    airplane = sol(airplane)
+    op_point = sol(op_point)
+    mass_props = sol(mass_props)
+    mass_props_TOGW = sol(mass_props_TOGW)
+    aero = sol(aero)
 
     wing_lowres = copy.deepcopy(wing)
     xsecs_to_keep = np.arange(len(wing.xsecs)) % 2 == 0
